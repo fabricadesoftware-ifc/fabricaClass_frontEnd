@@ -2,5 +2,7 @@
 import { RouterView } from 'vue-router';
 </script>
 <template>
-  <RouterView/>
+  <div class="h-screen font-Inter bg-white font-black">
+    <RouterView/>
+  </div>
 </template>
