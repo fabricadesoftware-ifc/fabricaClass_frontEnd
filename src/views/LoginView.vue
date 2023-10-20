@@ -12,7 +12,7 @@ const showPassword = ref(false)
       <h1 class="text-3xl font-bold text-start">Login</h1>
       <p class="text-lg text-start font-light">Ainda não tem uma conta? 
         <RouterLink :to="{ name: 'signup' }">
-        <span class="text-cyan cursor-pointer">Registre-se</span>!
+          <span class="text-cyan cursor-pointer">Registre-se</span>!
         </RouterLink>
       </p>
       <div class="flex flex-col gap-5">
@@ -28,7 +28,9 @@ const showPassword = ref(false)
           </div>
         </div>
       </div>
+      <RouterLink :to="{ name: 'forgotPassword' }">
       <p class="text-end text-cyan font-light cursor-pointer">Esqueceu a senha?</p>
+      </RouterLink>
       <button class="bg-cyan p-4 rounded-2xl text-xl text-white font-black">Login</button>
     </div>
   </div>

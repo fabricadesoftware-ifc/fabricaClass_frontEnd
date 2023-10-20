@@ -1,0 +1,27 @@
+<script setup>
+</script>
+<template>
+  <div class="m-auto w-1/2 flex flex-col bg-white h-screen justify-center items-center gap-6">
+    <div>
+      <img src="/logo-tela-branca.png" alt="Logo fábrica de software">
+    </div>
+    <div class="flex flex-col h-1/2 text-start w-2/3 gap-3">
+      <h1 class="text-3xl font-bold text-start">Recuperar Senha</h1>
+      <p class="text-lg text-justify font-light w-2/3">
+        Informe seu email para enviarmos um link de redifinição de senha.
+      </p>
+      <div class="flex flex-col gap-5">
+        <div class="relative flex items-center">
+          <i class="fa-solid fa-envelope absolute pl-4 text-2xl"></i>
+          <input type="email" placeholder="Email" class="bg-transparent p-4 border-2 rounded-2xl border-black outline-none w-full pl-12">
+        </div>
+      </div>
+      <button class="bg-cyan p-4 rounded-2xl text-xl text-white font-black">Enviar email</button>
+    </div>
+  </div>
+  <div class="top-3 left-3 fixed text-3xl cursor-pointer">
+    <router-link to="/login">
+    <i class="fa-solid fa-arrow-left"></i>
+    </router-link>
+  </div>
+</template>
