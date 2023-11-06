@@ -31,7 +31,7 @@ const showPassword = ref(false)
       <RouterLink :to="{ name: 'forgotPassword' }">
       <p class="text-end text-cyan font-light cursor-pointer">Esqueceu a senha?</p>
       </RouterLink>
-      <button class="bg-cyan p-4 rounded-2xl text-xl text-white font-black">Login</button>
+      <button class="bg-cyan p-4 rounded-2xl text-xl text-white font-black">Login </button>
     </div>
   </div>
   
