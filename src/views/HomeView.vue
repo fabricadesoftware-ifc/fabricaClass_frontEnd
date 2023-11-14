@@ -1,8 +1,27 @@
 <script setup>
 import { ref } from 'vue'
+import FileDocumentOutline from 'vue-material-design-icons/FileDocumentOutline.vue'
 
 const listaCards =
   ref([
+    {
+      data: '6 de novembro de 2023',
+      aula: 'Aula X, if else',
+      horarioInicio: '9:45',
+      horarioFim: '11:15'
+    },
+    {
+      data: '6 de novembro de 2023',
+      aula: 'Aula X, if else',
+      horarioInicio: '9:45',
+      horarioFim: '11:15'
+    },
+    {
+      data: '6 de novembro de 2023',
+      aula: 'Aula X, if else',
+      horarioInicio: '9:45',
+      horarioFim: '11:15'
+    },
     {
       data: '6 de novembro de 2023',
       aula: 'Aula X, if else',
@@ -24,28 +43,30 @@ const listaCards =
   ])
 </script>
 <template>
-  <div v-for="(card, i) in listaCards" :key="i" class="cards">
-      <div class="card-aula">
-        <div class="info">
-          <div class="texto" style="color: var(--ciano)">
-            {{ card.data }}
-          </div>
-          <div class="texto aula">{{ card.aula }}</div>
-          <div class="texto"> {{ card.horarioInicio }} - {{ card.horarioFim }}</div>
-          <div class="logo"></div>
-          <button>Responder</button>
+  <div class="cards">
+    <div v-for="(card, i) in listaCards" :key="i" class="card-aula">
+      <div class="info">
+        <div class="texto" style="color: var(--ciano); margin-top: 3%;">
+          {{ card.data }}
         </div>
+        <div class="texto aula">{{ card.aula }}</div>
+        <div class="texto" style="margin-right: 50% ;"> {{ card.horarioInicio }} - {{ card.horarioFim }}</div>
+        <div class="logo">
+        <file-document-outline class="icone"/>
         </div>
+        <button class="resposta">Responder</button>
       </div>
+    </div>
+  </div>
 </template>
 <style scoped>
 .cards {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   flex-wrap: wrap;
   margin: auto;
-  width: 960px;
-  height: 684px;
+  width: 85vw;
+  height: 70vh;
 }
 .card-aula {
   display: flex;
@@ -53,29 +74,35 @@ const listaCards =
   width: 200px;
   height: 200px;
   background-color: #f1f1f1;
-  margin: 20px;
+  margin: 1rem;
   border-radius: 15px;
   border-top: var(--ciano) 19px solid;
   flex-direction: column;
   padding: 0 10px;
   box-shadow: 0px 4px 34px 2px rgba(0, 0, 0, 0.25);
 }
-button {
+.resposta {
   background-color: var(--ciano);
   border-radius: 15px;
   color: var(--branco);
-  padding: 5px 0;
+  padding: 2.5% 25%;
+  margin: 6% auto;
 }
 .info {
   display: flex;
   flex-wrap: wrap;
 }
 .texto {
-  font-size: 12px;
+  font-size: 0.8rem;
 }
 .aula {
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: bold;
-  margin: 3px 0;
 }
+.logo{
+display: flex;
+justify-content: center;
+margin: auto;
+}
+
 </style>
