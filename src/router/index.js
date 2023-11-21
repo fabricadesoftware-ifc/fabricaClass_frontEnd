@@ -4,30 +4,37 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/footer',
-      name: 'footer',
-      component: () => import('../components/FooterComponent.vue')    
+      path: '/',
+      component: () => import('../layout/FullLayout.vue'),    
+      children: [
+        {
+          path: '/',
+          name: 'home',
+          component: () => import('../views/HomeView.vue')    
+        },
+      ]
     },
     {
       path: '/',
-      name: 'home',
-      component: () => import('../views/HomeView.vue')    
+      component: () => import('../layout/BlankLayout.vue'),  
+      children: [
+        {
+          path: '/login',
+          name: 'login',
+          component: () => import('../views/LoginView.vue')   
+        },
+        {
+          path: '/signup',
+          name: 'signup',
+          component: () => import('../views/SignupView.vue')    
+        },
+        {
+          path: '/forgotPassword',
+          name: 'forgotPassword',
+          component: () => import('../views/ForgotPasswordView.vue')
+        } 
+      ]  
     },
-    {
-      path: '/login',
-      name: 'login',
-      component: () => import('../views/LoginView.vue')   
-    },
-    {
-      path: '/signup',
-      name: 'signup',
-      component: () => import('../views/SignupView.vue')    
-    },
-    {
-      path: '/forgotPassword',
-      name: 'forgotPassword',
-      component: () => import('../views/ForgotPasswordView.vue')
-    } 
   ]
 })
 
