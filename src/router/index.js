@@ -4,6 +4,11 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: '/footer',
+      name: 'footer',
+      component: () => import('../components/FooterComponent.vue')    
+    },
+    {
       path: '/',
       name: 'home',
       component: () => import('../views/HomeView.vue')    
