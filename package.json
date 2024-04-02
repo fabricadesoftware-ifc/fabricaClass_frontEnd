@@ -10,6 +10,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@vueuse/core": "^10.9.0",
+    "axios": "^1.6.8",
     "pinia": "^2.1.6",
     "vite-plugin-pwa": "^0.19.7",
     "vue": "^3.3.4",
