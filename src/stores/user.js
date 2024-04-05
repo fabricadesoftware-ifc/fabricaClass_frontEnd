@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useStorage } from '@vueuse/core'
 import { useRouter } from 'vue-router'
 
+
 export const useUserStore = defineStore('user', {
   state: () => ({
     user: useStorage('user', null),
@@ -24,7 +25,7 @@ export const useUserStore = defineStore('user', {
     async logout() {
       this.user = null
       this.logged = false
-      this.router.push('/')
+      this.router.push({ name: 'login' })
       console.log("logout :)")
     }
   }

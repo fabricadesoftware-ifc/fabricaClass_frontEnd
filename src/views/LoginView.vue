@@ -9,12 +9,20 @@ const email = ref(null);
 const password = ref(null);
 
 const login = async () => {
+  try {
   const user = {
     email: email.value,
     password: password.value
   }
   await userStore.login(user);
-  router.push('/');
+  if(user) {
+  router.push({ name: 'home' });
+  console.log('logado lindao', user.email)
+}
+}
+ catch{
+  console.log('deu erro seu gay')
+ }
 }
 
 const showPassword = ref(false)

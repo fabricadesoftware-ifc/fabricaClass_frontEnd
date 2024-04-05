@@ -2,7 +2,7 @@
 import CardComp from '../components/CardComp.vue';
 </script>
 <template>
-  <div>
+  <div class="flex ">
     <CardComp />
   </div>
 </template>

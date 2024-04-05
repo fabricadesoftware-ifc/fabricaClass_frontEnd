@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import FileDocumentOutline from 'vue-material-design-icons/FileDocumentOutline.vue'
+import { useRouter } from 'vue-router'
 
 
 const listaCards = ref([
@@ -66,8 +67,10 @@ const listaCards = ref([
     }
 ])
 
-    
-
+const router = useRouter()
+const visualizar = () => {
+  router.push({ name: 'form' })
+}
 
 </script>
 <template>
@@ -82,7 +85,7 @@ const listaCards = ref([
         <div class="logo">
         <file-document-outline class="icone"/>
         </div>
-        <button class="resposta">Responder</button>
+        <button @click="visualizar()" class="resposta">Visualizar</button>
       </div>
     </div>
   </div>
@@ -140,5 +143,11 @@ margin: auto;
   color: var(--ciano);
   font-size: 2rem;
   margin-top: 10%;
+}
+
+.card-aula:hover {
+  transform: scale(1.03);
+  transition: 0.5s;
+  cursor: pointer;
 }
 </style>
