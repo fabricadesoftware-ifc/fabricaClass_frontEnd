@@ -1,10 +1,14 @@
+<script setup>
+import CardComp from '../components/CardComp.vue';
+</script>
 <template>
-  <div>
-
+  <div class="flex ">
+    <CardComp />
   </div>
 </template>
+<style scoped>
 
-<script setup>
 
-</script>
-
+<template>
+ 
+</template>
