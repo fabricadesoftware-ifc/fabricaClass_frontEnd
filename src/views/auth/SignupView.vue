@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import { useUserStore } from '../stores/auth/user';
+import { useUserStore } from '../../stores/auth/user';
 import { useRouter } from 'vue-router';
 
 const userStore = useUserStore();

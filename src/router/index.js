@@ -1,4 +1,3 @@
-
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -7,22 +6,22 @@ const router = createRouter({
     {
       path: '/login',
       name: 'login',
-      component: () => import('../views/LoginView.vue')    
+      component: () => import('../views/auth/LoginView.vue')    
     },
     {
       path: '/signup',
       name: 'signup',
-      component: () => import('../views/SignupView.vue')    
+      component: () => import('../views/auth/SignupView.vue')    
     },
     {
       path: '/forgotPassword',
       name: 'forgotPassword',
-      component: () => import('../views/ForgotPasswordView.vue')
+      component: () => import('../views/auth/ForgotPasswordView.vue')
     },
     {
       path: '/',
       name: 'home',
-      component: () => import('../views/HomeView.vue'),
+      component: () => import('../views/professor/HomeProfessorView.vue'),
       meta: {
       requiresAuth: true
       }
@@ -30,7 +29,7 @@ const router = createRouter({
     {
       path: '/user',
       name: 'user',
-      component: () => import('../views/UserView.vue'),
+      component: () => import('../views/others/UserView.vue'),
       meta: {
         requiresAuth: true
         }
@@ -38,15 +37,12 @@ const router = createRouter({
     {
       path: '/form',
       name: 'form',
-      component: () => import('../views/FormPageView.vue'),
+      component: () => import('../views/professor/FormProfessorPageView.vue'),
       meta: {
       requiresAuth: true
         }
     }
   ]
 });
-
-
-
 
 export default router

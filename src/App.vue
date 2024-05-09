@@ -1,6 +1,6 @@
 <script setup>
 import { RouterView, useRoute } from 'vue-router';
-import HeaderComp from './components/HeaderComp.vue';
+import HeaderComp from './components/templates/large/LargeHeaderComp.vue';
 
 const route = useRoute();
 const offHeader = () => {

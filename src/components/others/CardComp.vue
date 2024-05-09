@@ -1,8 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import FileDocumentOutline from 'vue-material-design-icons/FileDocumentOutline.vue'
-import { useRouter } from 'vue-router'
-
+import BtnRespostaComp from '../btns/BtnRespostaComp.vue'
 
 const listaCards = ref([
   {
@@ -67,11 +66,6 @@ const listaCards = ref([
     }
 ])
 
-const router = useRouter()
-const visualizar = () => {
-  router.push({ name: 'form' })
-}
-
 </script>
 <template>
   <div class="cards">
@@ -84,11 +78,11 @@ const visualizar = () => {
         <div class="texto" style="margin-right: 50% ;"> {{ card.horarioInicio }} - {{ card.horarioFim }}</div>
         <div class="logo">
         <file-document-outline class="icone"/>
-        </div>
-        <button @click="visualizar()" class="resposta">Visualizar</button>
-      </div>
+        <BtnRespostaComp />
     </div>
   </div>
+</div>
+</div>
 
 </template>
 
@@ -113,13 +107,6 @@ const visualizar = () => {
   flex-direction: column;
   padding: 0 10px;
   box-shadow: 0px 4px 34px 2px rgba(0, 0, 0, 0.25);
-}
-.resposta {
-  background-color: var(--ciano);
-  border-radius: 15px;
-  color: var(--branco);
-  padding: 2.5% 25%;
-  margin: 6% auto;
 }
 .info {
   display: flex;
