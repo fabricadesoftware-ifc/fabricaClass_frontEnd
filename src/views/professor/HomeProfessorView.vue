@@ -1,5 +1,5 @@
 <script setup>
-import  CardComp from '../../components/others/CardComp.vue'
+import CardComp from '../../components/others/CardComp.vue'
 </script>
 <template>
   <div class="flex ">

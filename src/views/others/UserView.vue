@@ -4,7 +4,6 @@ import { useAuthStore } from '../../stores/auth/auth';
 import { computed } from 'vue';
 
 const authStore = useAuthStore();
-const user = computed(() => authStore.data);
 const router = useRouter();
 
 const logout = () => {
@@ -19,10 +18,6 @@ const logout = () => {
         Sair
     </button>
 </div>
-<div>
-   {{ user }}
-</div>
-
 </template>
 
 <style></style>
