@@ -1,11 +1,4 @@
 <script setup>
-import { useUserStore } from '../stores/user';
-import { computed } from 'vue';
-
-const userStore = useUserStore()
-const user = computed(() => userStore.user)
-
-
 </script>
 <template>
   <nav class="shadow-lg flex justify-center">
@@ -19,7 +12,6 @@ const user = computed(() => userStore.user)
         <router-link to="/user">
           <i class="fa-solid fa-user text-4xl">
           </i>
-          {{ user.email }}
         </router-link>
       </div>
     </div>

@@ -1,3 +1,4 @@
+
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -39,10 +40,13 @@ const router = createRouter({
       name: 'form',
       component: () => import('../views/FormPageView.vue'),
       meta: {
-        requiresAuth: true
+      requiresAuth: true
         }
     }
   ]
-})
+});
+
+
+
 
 export default router

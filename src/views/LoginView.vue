@@ -1,31 +1,28 @@
 <script setup>
 import { ref } from 'vue';
-import { useUserStore } from '../stores/user';
+import { useUserStore } from '../stores/auth/user';
 import { useRouter } from 'vue-router';
 
-const userStore = useUserStore();
 const router = useRouter();
+const userStore = useUserStore();
 const email = ref(null);
 const password = ref(null);
+const showPassword = ref(false);
 
 const login = async () => {
   try {
-  const user = {
+    await userStore.postLogin({
     email: email.value,
     password: password.value
-  }
-  await userStore.login(user);
-  if(user) {
-  router.push({ name: 'home' });
-  console.log('logado lindao', user.email)
+  })
+  router.push('/')
 }
-}
- catch{
-  console.log('deu erro seu gay')
+ catch (error){
+  console.log(error)
+  console.log('d')
  }
-}
+};
 
-const showPassword = ref(false)
 </script>
 <template>
   <div class="m-auto w-1/2 flex flex-col bg-white h-screen justify-center items-center gap-6">

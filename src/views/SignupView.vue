@@ -1,37 +1,32 @@
 <script setup>
-import { ref } from 'vue'
-import { useUserStore } from '../stores/user'
-import { useRouter } from 'vue-router'
-const userStore = useUserStore()
-const router = useRouter()
-const showPassword = ref(false)
-const password = ref('')
-const afirmPassword = ref('')
-const tipo_usuario = ref(null)
-const email = ref(null)
-const wrongPasswords = ref(false)
+import { ref } from 'vue';
+import { useUserStore } from '../stores/auth/user';
+import { useRouter } from 'vue-router';
 
-const registerUser = async () => {
-  const user = {
+const userStore = useUserStore();
+const showPassword = ref(false);
+const password = ref('');
+const afirmPassword = ref('');
+const tipo_usuario = ref(null);
+const email = ref(null);
+const wrongPasswords = ref(false);
+const matricula = ref('');
+const router = useRouter();
+
+const register = async () => {
+  if (password.value !== afirmPassword.value) {
+    wrongPasswords.value = true
+  };
+  wrongPasswords.value = false
+  console.log("deu boa pia")
+  router.push({ name: 'login' })
+  userStore.postRegister({
     email: email.value,
     password: password.value,
-    tipo_usuario: tipo_usuario.value
-  }
-  console.log(tipo_usuario.value)
-  if(password.value != afirmPassword.value){
-    wrongPasswords.value = true
-  }else{
-    if (tipo_usuario.value === 1) {
-      router.push('/')
-      await userStore.register(user)
-  } else {
-    await userStore.register(user)
-    router.push('/login')
-  }
-  }
-}
-
-
+    tipo_usuario: tipo_usuario.value,
+    matricula: matricula.value
+  })
+};
 </script>
 <template>
   <div class="m-auto w-1/2 flex flex-col bg-white h-screen items-center gap-6">
@@ -61,7 +56,9 @@ const registerUser = async () => {
             type="text"
             placeholder="Matrícula"
             class="bg-transparent p-4 border-2 rounded-2xl border-black outline-none w-full pl-12"
+            v-model="matricula"
           />
+          
         </div>
         <div>
           <label for="tipo_usuario">Escolha seu tipo de usuario:</label>
@@ -108,7 +105,7 @@ const registerUser = async () => {
       </div>
       <button
         class="bg-cyan p-4 rounded-2xl text-xl text-white font-black mt-4"
-        @click="registerUser()"
+        @click="register()"
       >
         Registrar-se
       </button>

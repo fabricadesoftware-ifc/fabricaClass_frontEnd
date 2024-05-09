@@ -1,27 +1,26 @@
 <script setup>
-import { computed } from 'vue';
-import { useUserStore } from '../stores/user';
 import { useRouter } from 'vue-router';
+import { useAuthStore } from '../stores/auth/auth';
+import { computed } from 'vue';
 
-const userStore = useUserStore()
-const user = computed(() => userStore.user)
-const logged = computed(() => userStore.logged)
-const router = useRouter()
+const authStore = useAuthStore();
+const user = computed(() => authStore.data);
+const router = useRouter();
 
 const logout = () => {
     router.push({ name: 'login' });
-    userStore.logout()   
+    authStore.logout()   
 };
 
 </script>
 <template>
-<div v-if="logged">
-    {{ user.email }}
-</div>
 <div>
-    <button class="" v-if="logged" @click="logout">
+    <button  @click="logout">
         Sair
     </button>
+</div>
+<div>
+   {{ user }}
 </div>
 
 </template>

@@ -1,28 +1,28 @@
 import './assets/tailwind.css'
-
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import { useUserStore } from './stores/user'
 import App from './App.vue'
 import router from './router'
+import '@/plugins/axios'
+import { useAuthStore } from './stores/auth/auth';
 
 const app = createApp(App)
 
 app.use(createPinia())
  
-const userStore = useUserStore()
+app.use(router)
+app.mount('#app')
 
-const user = () => {
-  return userStore.logged;
-}
+const authStore = useAuthStore();
 
-router.beforeEach(async (to, from, next) => {
-  if (to.meta.requiresAuth && !user) {
+const auth = () => {
+  return authStore.state.logged;
+};
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth && !auth()) {
     next({ name: 'login' }) 
-    console.log(user)
   } else {
     next()
   }
-})
-app.use(router)
-app.mount('#app')
+});
