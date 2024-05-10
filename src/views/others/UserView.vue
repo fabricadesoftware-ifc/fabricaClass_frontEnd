@@ -1,7 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '../../stores/auth/auth';
-import { computed } from 'vue';
+import LargeHeaderComp from '../../components/templates/large/LargeHeaderComp.vue';
 
 const authStore = useAuthStore();
 const router = useRouter();
@@ -13,6 +13,7 @@ const logout = () => {
 
 </script>
 <template>
+<LargeHeaderComp />
 <div>
     <button  @click="logout">
         Sair
