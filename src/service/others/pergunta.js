@@ -1,4 +1,4 @@
-import api from '../../plugins/axios'
+import api from '../../plugins/axios';
 
 class PerguntaService {
     async createPergunta(pergunta) {
@@ -7,7 +7,7 @@ class PerguntaService {
             return data;
         } catch (error) {
             return error.message;
-        }
+        };
     };
     async getPerguntas() {
         try {
@@ -15,7 +15,7 @@ class PerguntaService {
             return data;
         } catch (error) {
             return error.message;
-        }
+        };
     };
     async getPergunta(id) {
         try {
@@ -23,7 +23,7 @@ class PerguntaService {
             return data;
         } catch (error) {
             return error.message;
-        }
+        };
     };
     async updatePergunta(pergunta) {
         try {
@@ -31,7 +31,7 @@ class PerguntaService {
             return data;
         } catch (error) {
             return error.message;
-        }
+        };
     };
     async deletePergunta(id) {
         try {
@@ -39,7 +39,7 @@ class PerguntaService {
             return data;
         } catch (error) {
             return error.message;
-        }
+        };
     };
     async getPerguntasByFormulario(id) {
         try {
@@ -47,7 +47,7 @@ class PerguntaService {
             return data;
         } catch (error) {
             return error.message;
-        }
+        };
     };
 }
 

@@ -5,24 +5,25 @@ export const useAuthStore = defineStore('auth', () =>{
     const state = useStorage('token', {
         accessToken: null,
         refreshToken: null,
-        logged: false,
-        data: null
-    })
+        logged: null,
+        data: null,
+    });
     
     const setAccessToken = (data) => {
         state.value.accessToken = data.token;
         state.value.refreshToken = data.refresh; 
-        state.value.logged = true;
-    }
+        state.value.logged = data.logged;
+    };
 
     const logout = () => {
         state.value.accessToken = null;
         state.value.refreshToken = null;
         state.value.logged = null;
-    }
+    };
+
     return {
         state,
         setAccessToken,
-        logout
+        logout,
     };
 });
