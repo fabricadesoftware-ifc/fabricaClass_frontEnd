@@ -3,6 +3,7 @@
 <template>
   <nav class="shadow-lg flex justify-center">
     <div class="flex w-3/5 justify-between items-center">
+      Small
       <div>
         <router-link to="/">
           <img src="../assets/logo-fabrica.png"/>

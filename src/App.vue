@@ -1,9 +1,25 @@
 <script setup>
-import { RouterView } from 'vue-router';
+import { RouterView, useRoute } from 'vue-router';
+import { useScreen } from './composables/screen';
 
+
+const { menu } = useScreen();
+const route = useRoute();
+
+const offHeader = () => {
+  if (route.name == 'login' || route.name == 'signup' || route.name == 'forgotPassword') {
+    return true;
+  }
+};
 </script>
+
 <template>
-  <div class="font-Inter bg-white font-black flex flex-col min-h-screen ">
-    <RouterView/>
+<div> 
+  <div v-if="offHeader()"> 
   </div>
+    <component :is="menu" v-else/>
+    <main class="font-Inter bg-white font-black flex flex-col min-h-screen "> 
+      <RouterView/>
+    </main>
+</div>
 </template>
