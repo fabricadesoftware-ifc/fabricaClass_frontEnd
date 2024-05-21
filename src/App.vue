@@ -18,7 +18,7 @@ const offHeader = () => {
   <div v-if="offHeader()"> 
   </div>
     <component :is="menu" v-else/>
-    <main class="font-Inter bg-white font-black flex flex-col min-h-screen "> 
+    <main class="font-Inter bg-white font-black flex flex-col min-h-screen pt-20"> 
       <RouterView/>
     </main>
 </div>
