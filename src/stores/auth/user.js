@@ -30,7 +30,8 @@ export const useUserStore = defineStore('user', () => {
       authStore.setAccessToken({ data: email });
       authStore.setAccessToken({ logged: true }); 
       } else {
-      console.log('Erro ao logar');
+      console.log('Erro ao logar', access, email,logged);
+      
       };
     };
 

@@ -1,9 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import { useUserStore } from '../../stores/auth/user';
-import { useRouter } from 'vue-router';
 
-const router = useRouter();
 const userStore = useUserStore();
 const email = ref(null);
 const password = ref(null);
@@ -14,12 +12,10 @@ const login = async () => {
     await userStore.postLogin({
     email: email.value,
     password: password.value
-  })
-  router.push('/')
+  });
 }
  catch (error){
-  console.log(error)
-  console.log('d')
+  console.log('erro ao logar')
  }
 };
 

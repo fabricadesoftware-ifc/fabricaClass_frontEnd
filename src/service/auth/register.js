@@ -1,4 +1,4 @@
-import api from '@/plugins/axios'
+import api from '@/plugins/axios';
 
 const register = async ({ email, password, matricula, tipo_usuario }) => {
     try {
@@ -13,6 +13,6 @@ const register = async ({ email, password, matricula, tipo_usuario }) => {
     catch (error){
         return error.message
     }
-}
+};
 
 export default register;
