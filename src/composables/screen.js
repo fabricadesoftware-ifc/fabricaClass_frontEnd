@@ -20,7 +20,7 @@ export function useScreen() {
             menu.value = defineAsyncComponent(() => import ('../components/templates/large/LargeHeaderComp.vue'));
         }
      }
-    
+
      onMounted(() => {
         updateBreakpoint();
         window.addEventListener('resize', updateBreakpoint);

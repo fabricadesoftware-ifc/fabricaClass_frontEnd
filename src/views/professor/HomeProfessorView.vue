@@ -7,5 +7,5 @@ import CardComp from '../../components/others/CardComp.vue';
   </div>
 </template>
 <style scoped>
-
 </style>
+
