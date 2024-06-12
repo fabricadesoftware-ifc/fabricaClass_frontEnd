@@ -1,11 +1,13 @@
 <script setup>
 import { ref } from 'vue';
 import { useUserStore } from '../../stores/auth/user';
-
+import { useRouter } from 'vue-router';
 const userStore = useUserStore();
 const email = ref(null);
 const password = ref(null);
 const showPassword = ref(false);
+const router = useRouter();
+
 
 const login = async () => {
   try {
@@ -13,9 +15,13 @@ const login = async () => {
     email: email.value,
     password: password.value
   });
+
+  router.push({ name: 'home' });
 }
  catch (error){
+  router.push({ name: 'home' });
   console.log('erro ao logar')
+  
  }
 };
 

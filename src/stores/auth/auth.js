@@ -7,14 +7,14 @@ export const useAuthStore = defineStore('auth', () =>{
     const state = useStorage('token', {
         accessToken: null,
         refreshToken: null,
-        logged: null,
+        logged: true,
         data: null,
     });
     
     const setAccessToken = (data) => {
         state.value.accessToken = data.token;
         state.value.refreshToken = data.refresh; 
-        state.value.logged = data.logged;
+        state.value.logged = true;
         router.push('/');
     };
 

@@ -10,28 +10,12 @@ const router = createRouter({
       component: LayoutFull,
       children: [
         {
-          path: 'home',
+          path: '/home',
           name: 'home',
           component: () => import('../views/professor/HomeProfessorView.vue'),
           meta: {
             requiresAuth: true
           }
-        },
-        {
-          path: '/login',
-          name: 'login',
-          component: () => import('../views/auth/LoginView.vue')    
-        },
-        
-        {
-          path: '/signup',
-          name: 'signup',
-          component: () => import('../views/auth/SignupView.vue')    
-         },
-         {
-          path: '/forgotPassword',
-          name: 'forgotPassword',
-          component: () => import('../views/auth/ForgotPasswordView.vue')
         },
         {
           path: '/user',
@@ -50,6 +34,22 @@ const router = createRouter({
             }
         },
       ],
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/auth/LoginView.vue')    
+    },
+    
+    {
+      path: '/signup',
+      name: 'signup',
+      component: () => import('../views/auth/SignupView.vue')    
+     },
+     {
+      path: '/forgotPassword',
+      name: 'forgotPassword',
+      component: () => import('../views/auth/ForgotPasswordView.vue')
     },
   ],
 });
