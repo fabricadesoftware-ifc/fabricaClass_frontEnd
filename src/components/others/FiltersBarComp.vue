@@ -12,18 +12,20 @@
     <div>
       <h1 class="text-2xl my-3 font-medium">{{ titlle }}</h1>
     </div>
-    <div class="flex items-center">
-      <p class="mr-5 font-medium">Filtrar por:</p>
-      <select>
-        <option value="">materia</option>
-      </select>
-      <select>
-        <option value="">Professor</option>
-      </select>
-      <input type="date" />
-      <select>
-        <option value="">Horario</option>
-      </select>
+    <div class="flex items-center w-100">
+      <p class="mr-5">Filtrar por:</p>
+      <div class="bg-icewhite py-1 rounded-full">
+        <select>
+          <option value="">materia</option>
+        </select>
+        <select>
+          <option value="">Professor</option>
+        </select>
+        <input type="date" />
+        <select>
+          <option value="">Horario</option>
+        </select>
+      </div>
     </div>
   </div>
 </template>
@@ -36,5 +38,6 @@ input[type='date'] {
   padding: 1px 10px;
   font-size: 13px;
   height: 30px;
+  border: 1px solid black;
 }
 </style>
