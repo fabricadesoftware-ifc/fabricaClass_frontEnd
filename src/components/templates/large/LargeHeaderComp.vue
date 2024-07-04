@@ -1,5 +1,4 @@
 <script setup>
-import filterBarComp from '@/components/others/FiltersBarComp.vue'
 import { ref } from 'vue'
 const isDark = ref(false)
 const isLight = ref(true)
