@@ -11,6 +11,7 @@ module.exports = {
       "orange": "#FF8B3F",
       "blue": "#4B4BEB",
       "black": "#22272E",
+      "icewhite": "#FFFFFF",
       }
     },
     fontFamily: {

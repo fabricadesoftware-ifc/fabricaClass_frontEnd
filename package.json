@@ -10,6 +10,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.7.22",
+    "@heroicons/vue": "^2.1.4",
     "@vueuse/core": "^10.9.0",
     "axios": "^1.6.8",
     "pinia": "^2.1.6",

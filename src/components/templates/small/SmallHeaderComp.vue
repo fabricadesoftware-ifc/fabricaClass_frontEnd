@@ -1,4 +1,7 @@
-<script setup></script>
+<script setup>
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+import { ChevronDownIcon } from '@heroicons/vue/20/solid'
+</script>
 <template>
   <header class="h-40 flex justify-center bg-gray">
     <div class="flex items-center">
@@ -15,12 +18,199 @@
       </div>
     </div>
   </header>
-  <nav class="text-sm shadow-none bg-gray">
+  <nav class="shadow-none bg-gray pl-16">
     <p>Filtrar por:</p>
-    <button>Matéria <i class="fa-solid fa-arrow-down"></i></button>
-    <button>Professor <i class="fa-solid fa-arrow-down"></i></button>
-    <button>Data <i class="fa-solid fa-calendar"></i></button>
-    <button>Horário <i class="fa-solid fa-arrow-down"></i></button>
+    <Menu as="div" class="relative inline-block text-left">
+      <div>
+        <MenuButton
+          class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray px-3 py-2 text-sm font-family text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+        >
+          Matéria
+          <ChevronDownIcon class="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
+        </MenuButton>
+      </div>
+
+      <transition
+        enter-active-class="transition ease-out duration-100"
+        enter-from-class="transform opacity-0 scale-95"
+        enter-to-class="transform opacity-100 scale-100"
+        leave-active-class="transition ease-in duration-75"
+        leave-from-class="transform opacity-100 scale-100"
+        leave-to-class="transform opacity-0 scale-95"
+      >
+        <MenuItems
+          class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-gray shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+        >
+          <div class="py-1">
+            <MenuItem v-slot="{ active }">
+              <a
+                href="#"
+                :class="[
+                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                  'block px-4 py-2 text-sm'
+                ]"
+                >Desenvolvimento Web</a
+              >
+            </MenuItem>
+            <MenuItem v-slot="{ active }">
+              <a
+                href="#"
+                :class="[
+                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                  'block px-4 py-2 text-sm'
+                ]"
+                >Programação</a
+              >
+            </MenuItem>
+            <MenuItem v-slot="{ active }">
+              <a
+                href="#"
+                :class="[
+                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                  'block px-4 py-2 text-sm'
+                ]"
+                >Projetos de Software</a
+              >
+            </MenuItem>
+            <MenuItem v-slot="{ active }">
+              <a
+                href="#"
+                :class="[
+                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                  'block px-4 py-2 text-sm'
+                ]"
+                >Banco de dados</a
+              >
+            </MenuItem>
+          </div>
+        </MenuItems>
+      </transition>
+    </Menu>
+
+    <Menu as="div" class="relative inline-block text-left">
+      <div>
+        <MenuButton
+          class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray px-3 py-2 text-sm font-family text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+        >
+          Professor
+          <ChevronDownIcon class="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
+        </MenuButton>
+      </div>
+
+      <transition
+        enter-active-class="transition ease-out duration-100"
+        enter-from-class="transform opacity-0 scale-95"
+        enter-to-class="transform opacity-100 scale-100"
+        leave-active-class="transition ease-in duration-75"
+        leave-from-class="transform opacity-100 scale-100"
+        leave-to-class="transform opacity-0 scale-95"
+      >
+        <MenuItems
+          class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-gray shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+        >
+          <div class="py-1">
+            <MenuItem v-slot="{ active }">
+              <a
+                href="#"
+                :class="[
+                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                  'block px-4 py-2 text-sm'
+                ]"
+                >Fábio Moura</a
+              >
+            </MenuItem>
+            <MenuItem v-slot="{ active }">
+              <a
+                href="#"
+                :class="[
+                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                  'block px-4 py-2 text-sm'
+                ]"
+                >Marco Rojas</a
+              >
+            </MenuItem>
+            <MenuItem v-slot="{ active }">
+              <a
+                href="#"
+                :class="[
+                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                  'block px-4 py-2 text-sm'
+                ]"
+                >Eduardo Silva</a
+              >
+            </MenuItem>
+            <MenuItem v-slot="{ active }">
+              <a
+                href="#"
+                :class="[
+                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                  'block px-4 py-2 text-sm'
+                ]"
+                >Marco André</a
+              >
+            </MenuItem>
+          </div>
+        </MenuItems>
+      </transition>
+    </Menu>
+
+    <Menu as="div" class="relative inline-block text-left">
+      <div>
+        <MenuButton
+          class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray px-3 py-2 text-sm font-family text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+        >
+          Data
+          <ChevronDownIcon class="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
+        </MenuButton>
+      </div>
+
+      <transition
+        enter-active-class="transition ease-out duration-100"
+        enter-from-class="transform opacity-0 scale-95"
+        enter-to-class="transform opacity-100 scale-100"
+        leave-active-class="transition ease-in duration-75"
+        leave-from-class="transform opacity-100 scale-100"
+        leave-to-class="transform opacity-0 scale-95"
+      >
+        <MenuItems
+          class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-gray shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+        >
+          <div class="py-1">
+            <MenuItem v-slot="{ active }">
+              <a
+                href="#"
+                :class="[
+                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                  'block px-4 py-2 text-sm'
+                ]"
+                >Recente</a
+              >
+            </MenuItem>
+            <MenuItem v-slot="{ active }">
+              <a
+                href="#"
+                :class="[
+                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                  'block px-4 py-2 text-sm'
+                ]"
+                >Distante</a
+              >
+            </MenuItem>
+          </div>
+        </MenuItems>
+      </transition>
+    </Menu>
+
+    <Menu as="div" class="relative inline-block text-left">
+      <div>
+        <MenuButton
+          class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray px-3 py-2 text-sm font-family text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+        >
+          Horário
+          <ChevronDownIcon class="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
+        </MenuButton>
+      </div>
+    </Menu>
   </nav>
 </template>
 
@@ -34,10 +224,10 @@
   height: 70px;
   border-radius: 100%;
 }
-button{
+button {
   border: 1px solid black;
-  border-radius:30px;
-  padding:5px;
+  border-radius: 30px;
+  padding: 5px;
   margin: 4px;
 }
 </style>
