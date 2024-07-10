@@ -23,7 +23,7 @@ import { ChevronDownIcon } from '@heroicons/vue/20/solid'
     <Menu as="div" class="relative inline-block text-left">
       <div>
         <MenuButton
-          class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray px-3 py-2 text-sm font-family text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+          class="inline-flex w-full justify-center gap-x-1.5 rounded-full bg-gray px-2 py-1.5 text-sm font-family text-gray-900 ring-black ring-inset hover:bg-white"
         >
           Matéria
           <ChevronDownIcon class="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -39,7 +39,7 @@ import { ChevronDownIcon } from '@heroicons/vue/20/solid'
         leave-to-class="transform opacity-0 scale-95"
       >
         <MenuItems
-          class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-gray shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+          class="absolute right-0 z-10 w-56 origin-top-right rounded-md bg-gray shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
         >
           <div class="py-1">
             <MenuItem v-slot="{ active }">
@@ -90,7 +90,7 @@ import { ChevronDownIcon } from '@heroicons/vue/20/solid'
     <Menu as="div" class="relative inline-block text-left">
       <div>
         <MenuButton
-          class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray px-3 py-2 text-sm font-family text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+          class="inline-flex w-full justify-center gap-x-1.5 rounded-full bg-gray px-2 py-1.5 text-sm font-family text-gray-900 ring-black ring-inset hover:bg-white"
         >
           Professor
           <ChevronDownIcon class="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -106,7 +106,7 @@ import { ChevronDownIcon } from '@heroicons/vue/20/solid'
         leave-to-class="transform opacity-0 scale-95"
       >
         <MenuItems
-          class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-gray shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+          class="absolute right-0 z-10 w-56 origin-top-right rounded-xl bg-gray shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none"
         >
           <div class="py-1">
             <MenuItem v-slot="{ active }">
@@ -157,7 +157,7 @@ import { ChevronDownIcon } from '@heroicons/vue/20/solid'
     <Menu as="div" class="relative inline-block text-left">
       <div>
         <MenuButton
-          class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray px-3 py-2 text-sm font-family text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+          class="inline-flex w-full justify-center gap-x-1.5 rounded-full bg-gray px-2 py-1.5 text-sm font-family text-gray-900 ring-black ring-inset hover:bg-white"
         >
           Data
           <ChevronDownIcon class="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -173,7 +173,7 @@ import { ChevronDownIcon } from '@heroicons/vue/20/solid'
         leave-to-class="transform opacity-0 scale-95"
       >
         <MenuItems
-          class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-gray shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+          class="absolute right-0 z-10 w-56 origin-top-right rounded-md bg-gray shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
         >
           <div class="py-1">
             <MenuItem v-slot="{ active }">
@@ -199,17 +199,6 @@ import { ChevronDownIcon } from '@heroicons/vue/20/solid'
           </div>
         </MenuItems>
       </transition>
-    </Menu>
-
-    <Menu as="div" class="relative inline-block text-left">
-      <div>
-        <MenuButton
-          class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray px-3 py-2 text-sm font-family text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-        >
-          Horário
-          <ChevronDownIcon class="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
-        </MenuButton>
-      </div>
     </Menu>
   </nav>
 </template>
