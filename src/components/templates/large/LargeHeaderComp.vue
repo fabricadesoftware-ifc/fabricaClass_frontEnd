@@ -9,7 +9,7 @@ function switchTeme() {
 </script>
 
 <template>
-  <nav class="w-auto flex flex-col items-center h-auto justify-center">
+  <nav class="w-auto flex flex-col items-center h-48 z-0 justify-center pl-56 bg-white">
     <div class="flex justify-between w-5/6 mt-12">
       <div class="flex items-center">
         <img src="" alt="" class="" id="perfilAvatar" />
@@ -40,11 +40,11 @@ function switchTeme() {
             name=""
             id=""
             placeholder="Pesquisar Formularios"
-            class="rounded-full w-80 indent-20 h-14 text-xs"
+            class="rounded-full w-80 indent-20 h-12 text-xs"
           />
         </div>
 
-        <div class="m-3 font-medium rounded-full flex w-56 p-0.5 cursor-pointer" @click="switchTeme()" :class="{ bgLight: isDark, bgDark: isLight}" >
+        <div class="m-3 font-medium rounded-full flex w-56 p-0.5 cursor-pointer" @click="switchTeme()" :class="{ bgButtonLight: isDark, bgButtonDark: isLight}" >
             <span class="absolute z-10 h-12 ml-5 flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
@@ -72,9 +72,6 @@ function switchTeme() {
 </template>
 
 <style scoped>
-nav {
-  background-color: #efefef;
-}
 #perfilAvatar {
   border-radius: 50%;
   width: 75px;
@@ -87,11 +84,11 @@ nav {
   transition: 0.2s linear;
   color: white;
 }
-.bgLight{
+.bgButtonLight{
   background-color: white;
   transition: 0.2s linear;
 }
-.bgDark{
+.bgButtonDark{
   background-color: black;
   transition: 0.2s linear;
 }

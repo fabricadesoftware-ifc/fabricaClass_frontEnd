@@ -1,8 +1,9 @@
 <template>
-    <aside class="h-screen w-2/12">
+    <aside class="h-screen w-3/15 fixed top-0 bg-icewhite">
       <div class="flex flex-col justify-between h-screen py-24">
-        <div class="pt-24">
-          <ul class="flex flex-col gap-2">
+        <div class="">
+        <ul class="flex flex-col gap-2 items-center">
+            <img width="150" src="src\assets\logo-class.png.png" alt="" class="pb-16">
             <li class="gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="black">
                 <path stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 1C18.1046 1 19 1.88316 19 2.9726L19 6.33992C19 7.42936 18.1046 8.31252 17 8.31252H14C12.8954 8.31252 12 7.42936 12 6.33992L12 2.9726C12 1.88316 12.8954 1 14 1L17 1Z"/>
@@ -26,7 +27,7 @@
         </div>
         <div>
           <ul class="">
-            <li class="gap-2">
+            <li class="gap-2 text-red">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M14 15L19 10M19 10L14 5M19 10H7M7 1H5.8C4.11984 1 3.27976 1 2.63803 1.32698C2.07354 1.6146 1.6146 2.07354 1.32698 2.63803C1 3.27976 1 4.11984 1 5.8V14.2C1 15.8802 1 16.7202 1.32698 17.362C1.6146 17.9265 2.07354 18.3854 2.63803 18.673C3.27976 19 4.11984 19 5.8 19H7" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
