@@ -12,6 +12,7 @@ module.exports = {
       "blue": "#4B4BEB",
       "black": "#22272E",
       "icewhite": "#FFFFFF",
+      "strong": "#000",
       }
     },
     fontFamily: {
