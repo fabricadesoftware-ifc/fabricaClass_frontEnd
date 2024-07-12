@@ -1,6 +1,7 @@
 <script setup>
 import LargeHeaderComp from '../components/templates/large/LargeHeaderComp.vue';
 import LargeAsideComp from '../components/templates/large/LargeAsideComp.vue'
+import Cards from '../components/Cards/Cards.vue';
 import { useRoute } from 'vue-router';
 
 </script>
@@ -14,6 +15,9 @@ import { useRoute } from 'vue-router';
     <aside>
         <LargeAsideComp />
     </aside>
+    <main>
+        <Cards/>
+    </main>
     <RouterView/>
 </div>
 </template>
