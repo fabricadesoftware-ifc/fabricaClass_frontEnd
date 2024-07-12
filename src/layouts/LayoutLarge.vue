@@ -1,5 +1,6 @@
 <script setup>
 import LargeHeaderComp from '../components/templates/large/LargeHeaderComp.vue';
+import LargeAsideComp from '../components/templates/large/LargeAsideComp.vue'
 import { useRoute } from 'vue-router';
 
 </script>
@@ -10,8 +11,9 @@ import { useRoute } from 'vue-router';
     <header>
         <LargeHeaderComp/>
     </header>
+    <aside>
+        <LargeAsideComp />
+    </aside>
     <RouterView/>
 </div>
-
-
 </template>
