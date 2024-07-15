@@ -1,6 +1,6 @@
 <script setup>
-import {ref} from 'vue';
-import Item from './Item.vue';
+// import {ref} from 'vue';
+import ItemCard from './ItemCard.vue';
 import { itens } from './itens.js'
 
 const teste = itens
@@ -9,7 +9,7 @@ const teste = itens
 <template>
     <main>
         <div v-for="(item, index) in teste" :key="index">
-        <Item :teacher="item.teacher" :stars="item.stars" :class="item.class" :date="item.date" :hour="item.hour" />
+        <ItemCard :teacher="item.teacher" :stars="item.stars" :class="item.class" :date="item.date" :hour="item.hour" />
     </div>
     </main>
 </template>
