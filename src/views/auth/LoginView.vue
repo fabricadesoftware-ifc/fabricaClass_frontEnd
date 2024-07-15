@@ -27,35 +27,58 @@ const login = async () => {
 
 </script>
 <template>
-  <div class="m-auto w-1/2 flex flex-col bg-white h-screen justify-center items-center gap-6">
-    <div>
-      <img src="/logo-tela-branca.png" alt="Logo fábrica de software">
-    </div>
-    <div class="flex flex-col h-1/2 text-start w-2/3 gap-3">
-      <h1 class="text-3xl font-bold text-start">Login</h1>
-      <p class="text-lg text-start font-light">Ainda não tem uma conta? 
-        <RouterLink :to="{ name: 'signup' }">
-          <span class="text-cyan cursor-pointer">Registre-se</span>!
-        </RouterLink>
-      </p>
-      <div class="flex flex-col gap-5">
-        <div class="relative flex items-center">
-          <i class="fa-solid fa-envelope absolute pl-4 text-2xl"></i>
-          <input v-model="email" type="email" placeholder="Email" class="bg-transparent p-4 border-2 rounded-2xl border-black outline-none w-full pl-12">
+  <div class="w-screen h-screen flex items-center justify-center">
+    <form class="w-3/6 h-4/6 flex flex-col justify-around">
+        <div class="flex flex-col items-center gap-3">
+          <h1 class="text-5xl">Login</h1>
+          <h2>Coloque suas informacoes</h2>
         </div>
-        <div class="relative flex items-center ">
-          <i class="fa-solid fa-lock  absolute pl-4 text-2xl"></i>
-          <div class="w-full relative flex items-center">
-            <input v-model="password" :type="showPassword ? 'text' : 'password'" placeholder="Senha" class="bg-transparent p-4 border-2 rounded-2xl border-black outline-none w-full pl-12">
-            <i class="fa-solid fa-eye absolute text-2xl justify-self-end right-0 mr-4 cursor-pointer" @click="showPassword = !showPassword"></i>
+        <div class="flex flex-col">
+          <div class="flex flex-col h-13 items-center gap-9 mb-6">
+            <div class="inputBase w-1/2">
+              <input type="email" class="w-full h-full rounded-xl indent-5 text-xl">
+            </div>
+            <div class="inputBase w-1/2">
+              <input type="password" class="w-full h-full rounded-xl indent-5 text-xl">
+            </div>
           </div>
+          <input type="button" value="Esqueceu sua senha?">
         </div>
-      </div>
-      <RouterLink :to="{ name: 'forgotPassword' }">
-      <p class="text-end text-cyan font-light cursor-pointer">Esqueceu a senha?</p>
-      </RouterLink>
-      <button @click="login()" class="bg-cyan p-4 rounded-2xl text-xl text-white font-black">Login </button>
-    </div>
+        <div>
+          <input type="submit" value="Login">
+          <span>Nao tem conta? <input type="button" value="Cadastre-se"></span>
+        </div>
+    </form>
   </div>
-  
 </template>
+<style scoped>
+.inputBase::before{
+  content: 'teste';
+  width: 60px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 15px;
+  display: block;
+  position: absolute;
+  background-color: white;
+  transform: translate(15px,-10px);
+}
+.inputBase{
+  border: 1px solid black;
+  height: 65px;
+  border-radius: 0.75rem;
+  z-index: 2;
+}
+.inputBase::after{
+  content: '';
+  width: 100%;
+  height: 65px;
+  display: block;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 0.75rem;
+  z-index: -1;
+  transform: translate(10px,-60px);
+}
+</style>
