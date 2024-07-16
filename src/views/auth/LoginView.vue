@@ -2,58 +2,53 @@
 import { ref } from 'vue';
 import { useUserStore } from '../../stores/auth/user';
 import { useRouter } from 'vue-router';
-const userStore = useUserStore();
-const email = ref(null);
-const password = ref(null);
-const showPassword = ref(false);
-const router = useRouter();
-
-
-const login = async () => {
-  try {
-    await userStore.postLogin({
-    email: email.value,
-    password: password.value
-  });
-
-  router.push({ name: 'home' });
+const passwordView = ref('password')
+function tradetype() {
+  (passwordView.value == 'password')? passwordView.value == 'text' : passwordView.value == 'password'
 }
- catch (error){
-  router.push({ name: 'home' });
-  console.log('erro ao logar')
-  
- }
-};
-
 </script>
 <template>
-  <div class="w-screen h-screen flex items-center justify-center">
+  <div class="w-screen h-screen flex items-center justify-center bg-icewhite">
     <form class="w-3/6 h-4/6 flex flex-col justify-around">
         <div class="flex flex-col items-center gap-3">
-          <h1 class="text-5xl">Login</h1>
+          <h1 class="text-4xl font-semibold">Login</h1>
           <h2>Coloque suas informacoes</h2>
         </div>
         <div class="flex flex-col">
-          <div class="flex flex-col h-13 items-center gap-9 mb-6">
-            <div class="inputBase w-1/2">
-              <input type="email" class="w-full h-full rounded-xl indent-5 text-xl">
+          <div class="flex flex-col h-13 items-center">
+            <div class="inputBase inputEmail w-1/2 mb-9">
+              <input type="email" class="w-full h-full rounded-xl indent-5 text-md">
             </div>
-            <div class="inputBase w-1/2">
-              <input type="password" class="w-full h-full rounded-xl indent-5 text-xl">
+            <div class="inputBase inputPassword w-1/2 mb-2">
+              <input type="password" class="w-full h-full rounded-xl text-md pr-16 pl-5">
+            </div>
+            <div class="w-1/2 text-end">
+              <input type="button" value="Esqueceu sua senha?" class="text-xs self-end">
             </div>
           </div>
-          <input type="button" value="Esqueceu sua senha?">
         </div>
-        <div>
-          <input type="submit" value="Login">
-          <span>Nao tem conta? <input type="button" value="Cadastre-se"></span>
+        <div class="flex flex-col items-center gap-5">
+          <input type="submit" value="Login" class="w-1/2 h-14 bg-black rounded-full text-white text-md font-medium">
+          <span>Nao tem conta? <input type="button" value="Cadastre-se" class="font-semibold"></span>
         </div>
     </form>
   </div>
 </template>
 <style scoped>
-.inputBase::before{
-  content: 'teste';
+.inputEmail::before{
+  content: 'email';
+  width: 60px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 15px;
+  display: block;
+  position: absolute;
+  background-color: white;
+  transform: translate(15px,-10px);
+}
+.inputPassword::before{
+  content: 'senha';
   width: 60px;
   display: flex;
   align-items: center;
@@ -79,6 +74,6 @@ const login = async () => {
   border: 1px solid black;
   border-radius: 0.75rem;
   z-index: -1;
-  transform: translate(10px,-60px);
+  transform: translate(6px,-60px);
 }
 </style>
