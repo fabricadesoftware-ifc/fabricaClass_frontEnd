@@ -2,113 +2,59 @@
 import { ref } from 'vue';
 import { useUserStore } from '../../stores/auth/user';
 import { useRouter } from 'vue-router';
+import AuthInputComp from '../../components/others/AuthInputComp.vue';
 
-const userStore = useUserStore();
-const showPassword = ref(false);
-const password = ref('');
-const afirmPassword = ref('');
-const tipo_usuario = ref(null);
-const email = ref(null);
-const wrongPasswords = ref(false);
-const matricula = ref('');
-const router = useRouter();
-
-const register = async () => {
-  if (password.value !== afirmPassword.value) {
-    wrongPasswords.value = true
-  };
-  wrongPasswords.value = false
-  console.log("deu boa pia")
-  router.push({ name: 'login' })
-  userStore.postRegister({
-    email: email.value,
-    password: password.value,
-    tipo_usuario: tipo_usuario.value,
-    matricula: matricula.value
-  })
-};
+const typebutton = ref('password')
+const typeicon = ref('bx-hide')
+const typebutton2 = ref('password')
+const typeicon2 = ref('bx-hide')
+function typetrade(){
+  if(typebutton.value == 'password'){typebutton.value = 'text', typeicon.value = 'bx-show-alt'}else{ typebutton.value = 'password', typeicon.value = 'bx-hide'}
+}
+function typetrade2(){
+  if(typebutton2.value == 'password'){typebutton2.value = 'text', typeicon2.value = 'bx-show-alt'}else{ typebutton2.value = 'password', typeicon2.value = 'bx-hide'}
+}
 </script>
 <template>
-  <div class="m-auto w-1/2 flex flex-col bg-white h-screen items-center gap-6">
-    <div class="mt-16">
-      <img src="/logo-tela-branca.png" alt="Logo fábrica de software" />
-    </div>
-    <div class="flex flex-col h-1/2 text-start w-2/3 gap-3">
-      <h1 class="text-3xl font-bold text-start">Registre-se</h1>
-      <p class="text-lg text-start font-light">
-        Já tem uma conta? Faça
-        <RouterLink :to="{ name: 'login' }"> <span class="text-cyan">login</span>! </RouterLink>
-      </p>
-
-      <div class="flex flex-col gap-6">
-        <div class="relative flex items-center">
-          <i class="fa-solid fa-envelope absolute pl-4 text-2xl"></i>
-          <input
-            type="email"
-            placeholder="Email"
-            class="bg-transparent p-4 border-2 rounded-2xl border-black outline-none w-full pl-12"
-            v-model="email"
-          />
+  <head>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <div class="w-screen h-screen flex items-center justify-center bg-icewhite">
+    <form class="w-3/6 h-4/6 flex flex-col justify-around">
+        <div class="flex flex-col items-center gap-2 mb-6">
+          <h1 class="text-4xl font-semibold">Cadastre-se</h1>   
+          <h2>Coloque suas informacoes</h2>
         </div>
-        <div class="relative flex items-center">
-          <i class="fa-solid fa-user absolute pl-4 text-2xl"></i>
-          <input
-            type="text"
-            placeholder="Matrícula"
-            class="bg-transparent p-4 border-2 rounded-2xl border-black outline-none w-full pl-12"
-            v-model="matricula"
-          />
-          
-        </div>
-        <div>
-          <label for="tipo_usuario">Escolha seu tipo de usuario:</label>
-          <select name="usuario" id="usuario" form="Usuarioform" v-model="tipo_usuario">
-            <option value=1>1</option>
-            <option value=2>2</option>
-          </select>
-        </div>
-        <div class="relative flex items-center">
-          <i class="fa-solid fa-lock absolute pl-4 text-2xl"></i>
-          <div class="w-full relative flex items-center">
-            <input
-              :type="showPassword ? 'text' : 'password'"
-              placeholder="Senha"
-              class="bg-transparent p-4 border-2 rounded-2xl border-black outline-none w-full pl-12"
-              v-model="password"
-            />
-            <i
-              class="fa-solid fa-eye absolute text-2xl justify-self-end right-0 mr-4 cursor-pointer"
-              @click="showPassword = !showPassword"
-            ></i>
+        <div class="flex flex-col">
+          <div class="flex flex-col h-13 items-center">
+            <AuthInputComp typeinput="email" inputClass="inputEmail" />
+            <AuthInputComp typeinput="text" inputClass="inputMatricula" maxlength=10 id="matricula"/>
+            <AuthInputComp :typeinput="typebutton" inputClass="inputPassword" />
+            <span class="eye-icon eye-position-1" @click="typetrade()"><i class='bx bx-sm' :class="typeicon"></i></span>
+            <AuthInputComp :typeinput="typebutton2" inputClass="inputPassword" />
+            <span class="eye-icon eye-position-2" @click="typetrade2()"><i class='bx bx-sm' :class="typeicon2"></i></span>
+            <div class="w-1/2 text-end -translate-y-8">
+            </div>
           </div>
         </div>
-        <div class="relative flex items-center">
-          <i class="fa-solid fa-lock absolute pl-4 text-2xl"></i>
-          <div class="w-full relative flex items-center">
-            <input
-              :type="showPassword ? 'text' : 'password'"
-              placeholder="Confirmar Senha"
-              class="bg-transparent p-4 border-2 rounded-2xl border-black outline-none w-full pl-12"
-              v-model="afirmPassword"
-            />
-            <i
-              class="fa-solid fa-eye absolute text-2xl justify-self-end right-0 mr-4 cursor-pointer"
-              @click="showPassword = !showPassword"
-            ></i>
-          </div>
+        <div class="flex flex-col items-center gap-5">
+          <input type="submit" value="Criar conta" class="w-1/2 h-14 bg-black rounded-full text-white text-md font-medium">
+          <span>Já possui conta? <router-link class="font-semibold" to="/login">Login</router-link></span>
         </div>
-        <div class="text-center" v-if="wrongPasswords">
-          <p class="text-red-500 transition ease-in-out duration-150 animate-shake">
-            As senhas não correspondem!
-          </p>
-        </div>
-      </div>
-      <button
-        class="bg-cyan p-4 rounded-2xl text-xl text-white font-black mt-4"
-        @click="register()"
-      >
-        Registrar-se
-      </button>
-    </div>
+    </form>
   </div>
 </template>
+<style scoped>
+.eye-icon{
+  user-select: none;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1000;
+}
+.eye-position-1{
+  transform: translate(10vw, 27vh);
+}
+.eye-position-2{
+  transform: translate(10vw, 39.5vh);
+}
+</style>

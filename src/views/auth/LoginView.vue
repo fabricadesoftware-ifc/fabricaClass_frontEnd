@@ -2,78 +2,48 @@
 import { ref } from 'vue';
 import { useUserStore } from '../../stores/auth/user';
 import { useRouter } from 'vue-router';
-const passwordView = ref('password')
-function tradetype() {
-  (passwordView.value == 'password')? passwordView.value == 'text' : passwordView.value == 'password'
+import AuthInputComp from '../../components/others/AuthInputComp.vue';
+
+const typebutton = ref('password')
+const typeicon = ref('bx-hide')
+function typetrade(){
+  if(typebutton.value == 'password'){typebutton.value = 'text', typeicon.value = 'bx-show-alt'}else{ typebutton.value = 'password', typeicon.value = 'bx-hide'}
 }
+
 </script>
 <template>
+  <head>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  </head>
   <div class="w-screen h-screen flex items-center justify-center bg-icewhite">
     <form class="w-3/6 h-4/6 flex flex-col justify-around">
         <div class="flex flex-col items-center gap-3">
-          <h1 class="text-4xl font-semibold">Login</h1>
+          <h1 class="text-4xl font-semibold">Login</h1>   
           <h2>Coloque suas informacoes</h2>
         </div>
         <div class="flex flex-col">
           <div class="flex flex-col h-13 items-center">
-            <div class="inputBase inputEmail w-1/2 mb-9">
-              <input type="email" class="w-full h-full rounded-xl indent-5 text-md">
-            </div>
-            <div class="inputBase inputPassword w-1/2 mb-2">
-              <input type="password" class="w-full h-full rounded-xl text-md pr-16 pl-5">
-            </div>
-            <div class="w-1/2 text-end">
+            <AuthInputComp typeinput="email" inputClass="inputEmail" />
+            <AuthInputComp :typeinput="typebutton" inputClass="inputPassword" />
+            <span class="eyeIcon" @click="typetrade()"><i class='bx bx-sm' :class="typeicon"></i></span>
+            <div class="w-1/2 text-end -translate-y-8">
               <input type="button" value="Esqueceu sua senha?" class="text-xs self-end">
             </div>
           </div>
         </div>
         <div class="flex flex-col items-center gap-5">
           <input type="submit" value="Login" class="w-1/2 h-14 bg-black rounded-full text-white text-md font-medium">
-          <span>Nao tem conta? <input type="button" value="Cadastre-se" class="font-semibold"></span>
+          <span>Nao tem conta? <router-link class="font-semibold" to="/signup">Cadastre-se</router-link></span>
         </div>
     </form>
   </div>
 </template>
 <style scoped>
-.inputEmail::before{
-  content: 'email';
-  width: 60px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  height: 15px;
-  display: block;
+.eyeIcon{
+  user-select: none;
+  cursor: pointer;
   position: absolute;
-  background-color: white;
-  transform: translate(15px,-10px);
-}
-.inputPassword::before{
-  content: 'senha';
-  width: 60px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  height: 15px;
-  display: block;
-  position: absolute;
-  background-color: white;
-  transform: translate(15px,-10px);
-}
-.inputBase{
-  border: 1px solid black;
-  height: 65px;
-  border-radius: 0.75rem;
-  z-index: 2;
-}
-.inputBase::after{
-  content: '';
-  width: 100%;
-  height: 65px;
-  display: block;
-  position: relative;
-  border: 1px solid black;
-  border-radius: 0.75rem;
-  z-index: -1;
-  transform: translate(6px,-60px);
+  z-index: 1000;
+  transform: translate(10vw, 15vh);
 }
 </style>
