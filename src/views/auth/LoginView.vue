@@ -24,26 +24,37 @@ function typetrade(){
         <div class="flex flex-col">
           <div class="flex flex-col h-13 items-center">
             <AuthInputComp typeinput="email" inputClass="inputEmail" />
-            <AuthInputComp :typeinput="typebutton" inputClass="inputPassword" />
-            <span class="eyeIcon" @click="typetrade()"><i class='bx bx-sm' :class="typeicon"></i></span>
+            <div class="flex password-config">   
+              <AuthInputComp :typeinput="typebutton" inputClass="inputPassword" />
+              <span class="eye-icon" @click="typetrade()"><i class='bx bx-sm' :class="typeicon"></i></span>
+            </div>
             <div class="w-1/2 text-end -translate-y-8">
-              <input type="button" value="Esqueceu sua senha?" class="text-xs self-end">
+              <router-link class="text-xs self-end cursor-pointer" to="/forgotPassword">Esqueceu sua senha?</router-link>
             </div>
           </div>
         </div>
         <div class="flex flex-col items-center gap-5">
-          <input type="submit" value="Login" class="w-1/2 h-14 bg-black rounded-full text-white text-md font-medium">
-          <span>Nao tem conta? <router-link class="font-semibold" to="/signup">Cadastre-se</router-link></span>
+          <input type="submit" value="Login" class="w-1/2 h-14 bg-black rounded-full text-white text-md font-medium cursor-pointer">
+          <span>Nao tem conta? <router-link class="font-semibold cursor-pointer" to="/signup">Cadastre-se</router-link></span>
         </div>
     </form>
   </div>
 </template>
 <style scoped>
-.eyeIcon{
+.password-config{
+  display: flex ;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+.eye-icon{
   user-select: none;
   cursor: pointer;
   position: absolute;
   z-index: 1000;
-  transform: translate(10vw, 15vh);
+  text-align: end;
+  transform: translate(10vw, 20px);
 }
+
 </style>

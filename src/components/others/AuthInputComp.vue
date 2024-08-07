@@ -1,30 +1,33 @@
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps } from 'vue'
 defineProps({
-    inputClass: {
-        type: String,
-        default: 'inputEmail',
-    },
-    typeinput: {
-        type: String,
-        default: 'email'
-    },
-    maxlength: {
-        type: Number,
-        default: 255
-    },
+  inputClass: {
+    type: String,
+    default: 'inputEmail'
+  },
+  typeinput: {
+    type: String,
+    default: 'email'
+  },
+  maxlength: {
+    type: Number,
+    default: 255
+  }
 })
-
 </script>
 
 <template>
-    <div class="inputBase w-1/2 mb-9" :class="inputClass">
-        <input :type="typeinput" class="w-full h-full rounded-xl px-5 pr-14 text-md" :maxlength="maxlength" >
-    </div>
+  <div class="inputBase w-1/2 mb-9" :class="inputClass">
+    <input
+      :type="typeinput"
+      class="w-full h-full rounded-xl px-5 pr-14 text-md"
+      :maxlength="maxlength"
+    />
+  </div>
 </template>
 
 <style scoped>
-.inputEmail::before{
+.inputEmail::before {
   content: 'email';
   width: 60px;
   display: flex;
@@ -34,9 +37,9 @@ defineProps({
   display: block;
   position: absolute;
   background-color: white;
-  transform: translate(15px,-10px);
+  transform: translate(15px, -10px);
 }
-.inputPassword::before{
+.inputPassword::before {
   content: 'senha';
   width: 60px;
   display: flex;
@@ -46,9 +49,9 @@ defineProps({
   display: block;
   position: absolute;
   background-color: white;
-  transform: translate(15px,-10px);
+  transform: translate(15px, -10px);
 }
-.inputMatricula::before{
+.inputMatricula::before {
   content: 'matricula';
   width: 90px;
   display: flex;
@@ -58,7 +61,7 @@ defineProps({
   display: block;
   position: absolute;
   background-color: white;
-  transform: translate(15px,-10px);
+  transform: translate(15px, -10px);
 }
 .inputBase{
   border: 1px solid black;
@@ -66,7 +69,10 @@ defineProps({
   border-radius: 0.75rem;
   z-index: 2;
 }
-.inputBase::after{
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+.inputBase::after {
   content: '';
   width: 100%;
   height: 65px;
@@ -75,6 +81,6 @@ defineProps({
   border: 1px solid black;
   border-radius: 0.75rem;
   z-index: -1;
-  transform: translate(6px,-60px);
+  transform: translate(6px, -60px);
 }
 </style>

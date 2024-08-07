@@ -29,32 +29,39 @@ function typetrade2(){
           <div class="flex flex-col h-13 items-center">
             <AuthInputComp typeinput="email" inputClass="inputEmail" />
             <AuthInputComp typeinput="text" inputClass="inputMatricula" maxlength=10 id="matricula"/>
-            <AuthInputComp :typeinput="typebutton" inputClass="inputPassword" />
-            <span class="eye-icon eye-position-1" @click="typetrade()"><i class='bx bx-sm' :class="typeicon"></i></span>
-            <AuthInputComp :typeinput="typebutton2" inputClass="inputPassword" />
-            <span class="eye-icon eye-position-2" @click="typetrade2()"><i class='bx bx-sm' :class="typeicon2"></i></span>
-            <div class="w-1/2 text-end -translate-y-8">
+            <div class="flex password-config">   
+              <AuthInputComp :typeinput="typebutton" inputClass="inputPassword" />
+              <span class="eye-icon" @click="typetrade()"><i class='bx bx-sm' :class="typeicon"></i></span>
             </div>
+            <div class="flex password-config">   
+              <AuthInputComp :typeinput="typebutton2" inputClass="inputPassword" />
+              <span class="eye-icon" @click="typetrade2()"><i class='bx bx-sm' :class="typeicon2"></i></span>
+            </div>
+            <div class="w-1/2 text-end -translate-y-8">
+            </div>  
           </div>
         </div>
         <div class="flex flex-col items-center gap-5">
-          <input type="submit" value="Criar conta" class="w-1/2 h-14 bg-black rounded-full text-white text-md font-medium">
-          <span>Já possui conta? <router-link class="font-semibold" to="/login">Login</router-link></span>
+          <input type="submit" value="Criar conta" class="w-1/2 h-14 bg-black rounded-full text-white text-md font-medium cursor-pointer">
+          <span>Já possui conta? <router-link class="font-semibold cursor-pointer" to="/login">Login</router-link></span>
         </div>
     </form>
   </div>
 </template>
 <style scoped>
+.password-config{
+  display: flex ;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
 .eye-icon{
   user-select: none;
   cursor: pointer;
   position: absolute;
   z-index: 1000;
-}
-.eye-position-1{
-  transform: translate(10vw, 27vh);
-}
-.eye-position-2{
-  transform: translate(10vw, 39.5vh);
+  text-align: end;
+  transform: translate(10vw, 20px);
 }
 </style>
