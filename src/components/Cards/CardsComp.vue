@@ -9,14 +9,17 @@ const teste = itens
 <template>
     <main>
         <div v-for="(item, index) in teste" :key="index">
-        <ItemCard :teacher="item.teacher" :stars="item.stars" :class="item.class" :date="item.date" :hour="item.hour" />
-    </div>
+            <ItemCard :teacher="item.teacher" :stars="item.stars" :class="item.class" :date="item.date"
+                :hour="item.hour" />
+        </div>
     </main>
 </template>
 
 <style scoped>
-main{
-    width: 100%;
+main {
+    margin-right: 0;
+    margin-left: auto;
+    width: 85%;
     height: 100%;
     background-color: var(--FAF9F9);
     padding: 1rem;
@@ -25,7 +28,7 @@ main{
     gap: 1rem;
 }
 
-main > div{
+main>div {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -33,11 +36,9 @@ main > div{
     gap: 1rem;
 }
 
-
-@media screen and (max-width: 768px){
-    main{
+@media screen and (max-width: 768px) {
+    main {
         grid-template-columns: 1fr;
     }
-    
 }
 </style>
