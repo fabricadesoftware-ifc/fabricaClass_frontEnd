@@ -1,12 +1,12 @@
 <script setup>
-import { ArrowTopRight, CalendarRange, ClockTimeFiveOutline, Xml } from '../Cards/icons.js';
+import { ArrowTopRight, CalendarRange, ClockTimeFiveOutline, Xml } from './icons.js';
 
 defineProps({
-  teacher: String,
-  stars: String,
-  class: String,
-  date: String,
-  hour: String,
+    teacher: String,
+    stars: String,
+    class: String,
+    date: String,
+    hour: String,
 })
 
 </script>
@@ -18,25 +18,23 @@ defineProps({
             <p>...</p>
         </div>
         <div class="info">
-                <p>Professor <strong>{{ teacher }}</strong></p>
-                <p>{{ stars }}</p>
+            <p>Professor <strong>{{ teacher }}</strong></p>
+            <p>{{ stars }}</p>
         </div>
-
         <div class="text">
-            <div class="textInfo">  
-            <div class="title">
-            <h3>{{ class }}</h3>
+            <div class="textInfo">
+                <div class="title">
+                    <h3>{{ class }}</h3>
+                </div>
+                <div class="date">
+                    <p>
+                        <CalendarRange />
+                        {{ date }}
+                        <ClockTimeFiveOutline />
+                        {{ hour }}
+                    </p>
+                </div>
             </div>
-            <div class="date">
-                <p>
-                    <CalendarRange /> 
-                    {{ date }}
-                    <ClockTimeFiveOutline />
-                {{ hour }}
-                </p>
-            </div>
-            </div>
-
             <div class="button">
                 <button>
                     <ArrowTopRight />
@@ -47,7 +45,7 @@ defineProps({
 </template>
 
 <style scoped>
-section{
+section {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -56,7 +54,7 @@ section{
     padding: 5px;
 }
 
-.color{
+.color {
     width: 100%;
     height: 130px;
     padding: 1rem 1.5rem 1rem 1rem;
@@ -68,7 +66,7 @@ section{
     font-size: 15pt;
 }
 
-.info{
+.info {
     width: 100%;
     display: flex;
     margin-top: -1rem;
@@ -76,41 +74,41 @@ section{
     gap: 15px;
 }
 
-.info > p {
+.info>p {
     background-color: var(--branco);
-    width: 30%;    
+    width: 35%;
     padding: 5px;
     text-align: center;
     font-size: 8pt;
     border-radius: 20px;
 }
 
-.text{
+.text {
     display: grid;
     grid-template-columns: 4fr 1fr;
     width: 95%;
     margin: 5px auto;
 }
 
-.textInfo{
+.textInfo {
     opacity: 0.7;
 }
 
-.date{
+.date {
     font-size: 10pt;
     display: flex;
     height: 30px;
     align-items: center;
 }
 
-.date > p {
+.date>p {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
 }
 
-button{
+button {
     background-color: blue;
     border: 0;
     max-width: 100%;
@@ -120,21 +118,19 @@ button{
     padding: 1rem;
     display: flex;
     justify-content: center;
-    align-items: center; 
-    cursor: pointer;   
+    align-items: center;
+    cursor: pointer;
 }
 
-button > span{
+button>span {
     width: 100%;
     margin: auto;
     display: flex;
     align-items: center;
 }
 
-button > span > svg {
+button>span>svg {
     width: 100%;
     height: 100%;
 }
-
-
 </style>

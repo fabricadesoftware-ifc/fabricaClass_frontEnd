@@ -1,5 +1,6 @@
 <script setup>
-import Item from './Item.vue';
+// import {ref} from 'vue';
+import ItemCard from './ItemCard.vue';
 import { itens } from './itens.js'
 
 const teste = itens
@@ -8,13 +9,14 @@ const teste = itens
 <template>
     <main>
         <div v-for="(item, index) in teste" :key="index">
-            <Item :teacher="item.teacher" :stars="item.stars" :class="item.class" :date="item.date" :hour="item.hour" />
+            <ItemCard :teacher="item.teacher" :stars="item.stars" :class="item.class" :date="item.date"
+                :hour="item.hour" />
         </div>
     </main>
 </template>
 
 <style scoped>
-main{
+main {
     margin-right: 0;
     margin-left: auto;
     width: 85%;
@@ -26,7 +28,7 @@ main{
     gap: 1rem;
 }
 
-main > div{
+main>div {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -34,8 +36,8 @@ main > div{
     gap: 1rem;
 }
 
-@media screen and (max-width: 768px){
-    main{
+@media screen and (max-width: 768px) {
+    main {
         grid-template-columns: 1fr;
     }
 }

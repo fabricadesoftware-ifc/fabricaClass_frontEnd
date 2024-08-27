@@ -1,7 +1,6 @@
 import api from '../../plugins/axios'
-
-class FormularioService {
-    async createFormulario(formulario) {
+class FormService {
+    async createForm(formulario) {
         try {
             const { data } = await api.post('formulario/', formulario);
             return data;
@@ -10,7 +9,7 @@ class FormularioService {
         }
     }
 
-    async getFormularios() {
+    async getForms() {
         try {
             const { data } = await api.get('formulario/');
             return data;
@@ -19,7 +18,7 @@ class FormularioService {
         }
     }
 
-    async getFormulario(id) {
+    async getForm(id) {
         try {
             const { data } = await api.get(`formulario/${id}/`);
             return data;
@@ -28,7 +27,7 @@ class FormularioService {
         }
     }
 
-    async updateFormulario(formulario) {
+    async updateForm(formulario) {
         try {
             const { data } = await api.patch(`formulario/${formulario.id}/`, formulario);
             return data;
@@ -37,7 +36,7 @@ class FormularioService {
         }
     }
 
-    async deleteFormulario(id) {
+    async deleteForm(id) {
         try {
             const { data } = await api.delete(`formulario/${id}/`);
             return data;
@@ -47,4 +46,4 @@ class FormularioService {
     }
 }
 
-export default new FormularioService();
+export default new FormService();
