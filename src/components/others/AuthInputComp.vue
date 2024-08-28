@@ -17,7 +17,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="inputBase w-1/2 mb-9" :class="inputClass">
+  <div class="inputBase mb-9" :class="inputClass">
     <input
       :type="typeinput"
       class="w-full h-full rounded-xl px-5 pr-14 text-md"
@@ -42,6 +42,18 @@ defineProps({
 .inputPassword::before {
   content: 'senha';
   width: 60px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 15px;
+  display: block;
+  position: absolute;
+  background-color: white;
+  transform: translate(15px, -10px);
+}
+.inputConfirmPassword::before {
+  content: 'Confirme a senha';
+  width: 150px;
   display: flex;
   align-items: center;
   text-align: center;

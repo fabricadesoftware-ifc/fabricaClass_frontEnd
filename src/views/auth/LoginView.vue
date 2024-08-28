@@ -6,9 +6,14 @@ import AuthInputComp from '../../components/others/AuthInputComp.vue';
 
 const typebutton = ref('password')
 const typeicon = ref('bx-hide')
-function typetrade(){
-  if(typebutton.value == 'password'){typebutton.value = 'text', typeicon.value = 'bx-show-alt'}else{ typebutton.value = 'password', typeicon.value = 'bx-hide'}
+function typetrade() {
+  if (typebutton.value == 'password') {
+    ; (typebutton.value = 'text'), (typeicon.value = 'bx-show-alt')
+  } else {
+    ; (typebutton.value = 'password'), (typeicon.value = 'bx-hide')
+  }
 }
+
 
 </script>
 <template>
@@ -21,11 +26,11 @@ function typetrade(){
           <h1 class="text-4xl font-semibold">Login</h1>   
           <h2>Coloque suas informacoes</h2>
         </div>
-        <div class="flex flex-col">
-          <div class="flex flex-col h-13 items-center">
-            <AuthInputComp typeinput="email" inputClass="inputEmail" />
-            <div class="flex password-config">   
-              <AuthInputComp :typeinput="typebutton" inputClass="inputPassword" />
+        <div class="flex flex-col items-center">
+          <div class="flex flex-col h-13 items-end w-1/2">
+            <AuthInputComp typeinput="email" inputClass="inputEmail w-full" />
+            <div class="flex password-config">
+              <AuthInputComp :typeinput="typebutton" inputClass="inputPassword w-full" />
               <span class="eye-icon" @click="typetrade()"><i class='bx bx-sm' :class="typeicon"></i></span>
             </div>
             <div class="w-1/2 text-end -translate-y-8">
@@ -54,7 +59,8 @@ function typetrade(){
   position: absolute;
   z-index: 1000;
   text-align: end;
-  transform: translate(10vw, 20px);
+  top: 20px;
+  right: 20px;
 }
 
 </style>

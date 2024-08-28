@@ -27,14 +27,14 @@ function typetrade2(){
         </div>
         <div class="flex flex-col">
           <div class="flex flex-col h-13 items-center">
-            <AuthInputComp typeinput="email" inputClass="inputEmail" />
-            <AuthInputComp typeinput="text" inputClass="inputMatricula" maxlength=10 id="matricula"/>
+            <AuthInputComp typeinput="email" inputClass="inputEmail w-1/2" />
+            <AuthInputComp typeinput="text" inputClass="inputMatricula w-1/2" maxlength=10 id="matricula"/>
             <div class="flex password-config">   
-              <AuthInputComp :typeinput="typebutton" inputClass="inputPassword" />
+              <AuthInputComp :typeinput="typebutton" inputClass="inputPassword"/>
               <span class="eye-icon" @click="typetrade()"><i class='bx bx-sm' :class="typeicon"></i></span>
             </div>
             <div class="flex password-config">   
-              <AuthInputComp :typeinput="typebutton2" inputClass="inputPassword" />
+              <AuthInputComp :typeinput="typebutton2" inputClass="inputConfirmPassword" />
               <span class="eye-icon" @click="typetrade2()"><i class='bx bx-sm' :class="typeicon2"></i></span>
             </div>
             <div class="w-1/2 text-end -translate-y-8">
@@ -54,7 +54,7 @@ function typetrade2(){
   align-items: center;
   flex-direction: column;
   position: relative;
-  width: 100%;
+  width: 50%;
 }
 .eye-icon{
   user-select: none;
@@ -62,6 +62,7 @@ function typetrade2(){
   position: absolute;
   z-index: 1000;
   text-align: end;
-  transform: translate(10vw, 20px);
+  top: 20px;
+  right: 20px;
 }
 </style>
