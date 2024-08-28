@@ -30,11 +30,11 @@ function typetrade2(){
             <AuthInputComp typeinput="email" inputClass="inputEmail w-1/2" />
             <AuthInputComp typeinput="text" inputClass="inputMatricula w-1/2" maxlength=10 id="matricula"/>
             <div class="flex password-config">   
-              <AuthInputComp :typeinput="typebutton" inputClass="inputPassword"/>
+              <AuthInputComp :typeinput="typebutton" inputClass="inputPassword w-full"/>
               <span class="eye-icon" @click="typetrade()"><i class='bx bx-sm' :class="typeicon"></i></span>
             </div>
             <div class="flex password-config">   
-              <AuthInputComp :typeinput="typebutton2" inputClass="inputConfirmPassword" />
+              <AuthInputComp :typeinput="typebutton2" inputClass="inputConfirmPassword w-full" />
               <span class="eye-icon" @click="typetrade2()"><i class='bx bx-sm' :class="typeicon2"></i></span>
             </div>
             <div class="w-1/2 text-end -translate-y-8">
