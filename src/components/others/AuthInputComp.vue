@@ -1,5 +1,6 @@
 <script setup>
-import { defineProps } from 'vue'
+import { defineProps, defineModel } from 'vue'
+
 defineProps({
   inputClass: {
     type: String,
@@ -14,6 +15,8 @@ defineProps({
     default: 255
   }
 })
+
+const inputValue = defineModel()
 </script>
 
 <template>
@@ -22,6 +25,7 @@ defineProps({
       :type="typeinput"
       class="w-full h-full rounded-xl px-5 pr-14 text-md"
       :maxlength="maxlength"
+      v-model="inputValue"
     />
   </div>
 </template>

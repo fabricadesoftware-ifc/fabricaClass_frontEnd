@@ -4,6 +4,12 @@ import { useUserStore } from '../../stores/auth/user';
 import { useRouter } from 'vue-router';
 import AuthInputComp from '../../components/others/AuthInputComp.vue';
 
+const user = ref({
+  email: '',
+  password: ''
+})
+
+// show password
 const typebutton = ref('password')
 const typeicon = ref('bx-hide')
 function typetrade() {
@@ -13,6 +19,9 @@ function typetrade() {
     ; (typebutton.value = 'password'), (typeicon.value = 'bx-hide')
   }
 }
+// end show password
+
+
 
 
 </script>
@@ -28,9 +37,9 @@ function typetrade() {
         </div>
         <div class="flex flex-col items-center">
           <div class="flex flex-col h-13 items-end w-1/2">
-            <AuthInputComp typeinput="email" inputClass="inputEmail w-full" />
+            <AuthInputComp typeinput="email" inputClass="inputEmail w-full" v-model="user.email" />
             <div class="flex password-config">
-              <AuthInputComp :typeinput="typebutton" inputClass="inputPassword w-full" />
+              <AuthInputComp :typeinput="typebutton" inputClass="inputPassword w-full" v-model="user.password" />
               <span class="eye-icon" @click="typetrade()"><i class='bx bx-sm' :class="typeicon"></i></span>
             </div>
             <div class="w-1/2 text-end -translate-y-8">

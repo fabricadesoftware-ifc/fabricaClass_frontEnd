@@ -4,6 +4,19 @@ import { useUserStore } from '../../stores/auth/user';
 import { useRouter } from 'vue-router';
 import AuthInputComp from '../../components/others/AuthInputComp.vue';
 
+const user = ref({
+  email: '',
+  matricula: '',
+  password: ''
+})
+const verifyPassword = ref()
+
+// function verifyForm() {
+//   if(user.password == verifyPassword.value){
+//   }
+// }
+
+// show password ------------------>
 const typebutton = ref('password')
 const typeicon = ref('bx-hide')
 const typebutton2 = ref('password')
@@ -14,23 +27,25 @@ function typetrade(){
 function typetrade2(){
   if(typebutton2.value == 'password'){typebutton2.value = 'text', typeicon2.value = 'bx-show-alt'}else{ typebutton2.value = 'password', typeicon2.value = 'bx-hide'}
 }
+// end show password
+
 </script>
 <template>
   <head>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   </head>
   <div class="w-screen h-screen flex items-center justify-center bg-icewhite">
-    <form class="w-3/6 h-4/6 flex flex-col justify-around">
+    <form class="w-3/6 h-4/6 flex flex-col justify-around" @submit.prevent="">
         <div class="flex flex-col items-center gap-2 mb-6">
           <h1 class="text-4xl font-semibold">Cadastre-se</h1>   
-          <h2>Coloque suas informacoes</h2>
+          <h2>Coloque suas informacoes {{ teste }}</h2>
         </div>
         <div class="flex flex-col">
           <div class="flex flex-col h-13 items-center">
-            <AuthInputComp typeinput="email" inputClass="inputEmail w-1/2" />
-            <AuthInputComp typeinput="text" inputClass="inputMatricula w-1/2" maxlength=10 id="matricula"/>
+            <AuthInputComp typeinput="email" inputClass="inputEmail w-1/2" v-model="user.email" />
+            <AuthInputComp typeinput="text" inputClass="inputMatricula w-1/2" maxlength=10 id="matricula" v-model="user.matricula"/>
             <div class="flex password-config">   
-              <AuthInputComp :typeinput="typebutton" inputClass="inputPassword w-full"/>
+              <AuthInputComp :typeinput="typebutton" inputClass="inputPassword w-full" v-model="user.password"/>
               <span class="eye-icon" @click="typetrade()"><i class='bx bx-sm' :class="typeicon"></i></span>
             </div>
             <div class="flex password-config">   
