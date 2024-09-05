@@ -38,6 +38,6 @@ input[type='date'] {
   padding: 1px 10px;
   font-size: 13px;
   height: 30px;
-  border: 1px solid black;
+  border: 1px solid rgba(218, 218, 218, 1);
 }
 </style>

@@ -1,16 +1,22 @@
 <script setup>
 // import {ref} from 'vue';
 import ItemCard from './ItemCard.vue';
+import filtersBarComp from '../others/FiltersBarComp.vue'
 import { itens } from './itens.js'
 
 const teste = itens
 </script>
 
 <template>
-    <main>
-        <div v-for="(item, index) in teste" :key="index">
-            <ItemCard :teacher="item.teacher" :stars="item.stars" :class="item.class" :date="item.date"
-                :hour="item.hour" />
+    <main class>
+        <div class="w-11/12">
+            <filtersBarComp />
+        </div>
+        <div class="w-11/12">
+            <div v-for="(item, index) in teste" :key="index" class="card">
+                <ItemCard :teacher="item.teacher" :stars="item.stars" :class="item.class" :date="item.date"
+                    :hour="item.hour" />
+            </div>
         </div>
     </main>
 </template>
@@ -18,25 +24,26 @@ const teste = itens
 <style scoped>
 main {
     margin-right: 0;
-    margin-left: auto;
-    width: 85%;
     height: 100%;
-    background-color: var(--FAF9F9);
     padding: 1rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 main>div {
-    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
-@media screen and (max-width: 768px) {
+.card{
+    width: 380px;
+}
+
+@media (max-width: 768px) {
     main {
         grid-template-columns: 1fr;
     }

@@ -1,7 +1,7 @@
 <template>
-    <aside class="h-screen w-3/15 fixed top-0 bg-icewhite">
+    <aside class="h-full w-3/15 fixed top-0 bg-icewhite">
       <div class="flex flex-col justify-between h-screen py-24">
-        <div class="">
+        <div class="w-full">
         <ul class="flex flex-col gap-2 items-center">
             <img width="150" src="src\assets\logo-class.png.png" alt="" class="pb-16">
             <li class="gap-2">

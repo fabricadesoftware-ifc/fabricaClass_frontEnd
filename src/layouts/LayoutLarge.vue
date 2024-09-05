@@ -9,14 +9,14 @@ import Cards from '../components/Cards/CardsComp.vue';
 <template>
     
 <div id="layout-large" >
-    <aside>
+    <aside class="h-screen bg-white">
         <LargeAsideComp />
     </aside>
     <span>
     <header>
         <LargeHeaderComp/>
     </header>
-    <main>
+    <main class="bg-white">
         <Cards/>
     </main>
 </span>

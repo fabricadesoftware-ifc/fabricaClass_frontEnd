@@ -19,7 +19,7 @@ defineProps({
         </div>
         <div class="info">
             <p>Professor <strong>{{ teacher }}</strong></p>
-            <p>{{ stars }}</p>
+            <p class="stars">{{ stars }}</p>
         </div>
         <div class="text">
             <div class="textInfo">
@@ -49,21 +49,27 @@ section {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: var(--branco);
-    border-radius: 15px;
+    background-color: white;
+    border-radius: 25px;
     padding: 5px;
+    margin-bottom: 50px;
 }
 
 .color {
     width: 100%;
-    height: 130px;
+    height: 150px;
     padding: 1rem 1.5rem 1rem 1rem;
-    color: var(--branco);
-    border-radius: 20px;
+    color: white;
+    border-radius: 25px;
     background-color: blue;
     display: flex;
     justify-content: space-between;
     font-size: 15pt;
+}
+
+.textInfo .title h3{
+    color:black;
+    opacity: 1;
 }
 
 .info {
@@ -72,10 +78,16 @@ section {
     margin-top: -1rem;
     justify-content: space-around;
     gap: 15px;
+    font-weight: 500;
+}
+
+.info .stars{
+    font-weight: 700;
 }
 
 .info>p {
-    background-color: var(--branco);
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px rgb(221, 221, 221);
     width: 35%;
     padding: 5px;
     text-align: center;
@@ -91,7 +103,7 @@ section {
 }
 
 .textInfo {
-    opacity: 0.7;
+    opacity: 0.4;
 }
 
 .date {

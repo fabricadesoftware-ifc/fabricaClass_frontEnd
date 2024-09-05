@@ -9,8 +9,8 @@ function switchTeme() {
 </script>
 
 <template>
-  <nav class="w-auto flex flex-col items-center h-48 z-0 justify-center pl-56 bg-white">
-    <div class="flex justify-between w-5/6 mt-12">
+  <nav class="w-auto flex flex-col items-center h-48 z-0 justify-center bg-white">
+    <div class="flex justify-between w-11/12 mt-12">
       <div class="flex items-center">
         <img src="" alt="" class="" id="perfilAvatar" />
         <div class="disable">
