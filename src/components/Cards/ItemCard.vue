@@ -24,7 +24,7 @@ defineProps({
         <div class="text">
             <div class="textInfo">
                 <div class="title">
-                    <h3>{{ class }}</h3>
+                    <h3 id="titleclass">{{ class }}</h3>
                 </div>
                 <div class="date">
                     <p>
@@ -45,6 +45,10 @@ defineProps({
 </template>
 
 <style scoped>
+.title #titleclass{
+    color: black !important;
+}
+
 section {
     width: 100%;
     display: flex;
@@ -67,8 +71,8 @@ section {
     font-size: 15pt;
 }
 
-.textInfo .title h3{
-    color:black;
+.textInfo .title h3 {
+    color: black;
     opacity: 1;
 }
 
@@ -81,7 +85,7 @@ section {
     font-weight: 500;
 }
 
-.info .stars{
+.info .stars {
     font-weight: 700;
 }
 
@@ -100,10 +104,6 @@ section {
     grid-template-columns: 4fr 1fr;
     width: 95%;
     margin: 5px auto;
-}
-
-.textInfo {
-    opacity: 0.4;
 }
 
 .date {
@@ -139,6 +139,10 @@ button>span {
     margin: auto;
     display: flex;
     align-items: center;
+}
+
+.textInfo .date{
+    color: rgba(144, 144, 144, 1);
 }
 
 button>span>svg {

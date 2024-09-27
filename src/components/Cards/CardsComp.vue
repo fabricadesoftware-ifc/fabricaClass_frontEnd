@@ -8,7 +8,7 @@ const teste = itens
 </script>
 
 <template>
-    <main class>
+    <main>
         <div class="w-11/12">
             <filtersBarComp />
         </div>
